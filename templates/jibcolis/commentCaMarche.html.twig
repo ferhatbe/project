@@ -1,0 +1,144 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="javascript/commentSaMarche.js"></script>
+    <link  rel="stylesheet" href="css/commentSaMarche.css">
+
+    <div class="container "id="commentSaMarche">
+       <!------ Include the above in your HEAD tag ---------->
+
+        <div class="container" id="pageAccueil">
+            <div id="titre">
+                <img src="images/commentcamarch.png" style="width: auto"></img>
+
+                <h4 style="margin-top: 20px">Vous voulez transporter ou expédier un colis ?</h4>
+                <h5>
+                    Pour en savoir un peux plus<br/>
+                    Consulter la rubrique qui vous concerne
+                </h5>
+
+
+            </div>
+            <h3 style="text-align: left;margin-bottom: 20px"><i>Transporteur :</i></h3>
+
+            <div class="stepwizard">
+                <div class="stepwizard-row setup-panel">
+                    <div class="stepwizard-step col-xs-3">
+                        <a href="#step-1" type="button" class="btn btn-success btn-circle">1</a>
+                        <p class="mr-5"><small>Housing & Food</small></p>
+                    </div>
+                    <div class="stepwizard-step col-xs-3">
+                        <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                        <p><small>Food & Utilization</small></p>
+                    </div>
+                    <div class="stepwizard-step col-xs-3">
+                        <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                        <p><small>Child Care & Education</small></p>
+                    </div>
+                    <div class="stepwizard-step col-xs-3">
+                        <a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
+                        <p><small>Employment & Finance</small></p>
+                    </div>
+                    <div class="stepwizard-step col-xs-3">
+                        <a href="#step-5" type="button" class="btn btn-default btn-circle" disabled="disabled">5</a>
+                        <p><small>Personal Safety</small></p>
+                    </div>
+                    <div class="stepwizard-step col-xs-3">
+                        <a href="#step-6" type="button" class="btn btn-default btn-circle" disabled="disabled">6</a>
+                        <p><small>Personal Safety</small></p>
+                    </div>
+                </div>
+            </div>
+
+            <form role="form">
+                <div class="panel panel-primary setup-content" id="step-1">
+                    <div class="panel-heading">
+
+                        <div class="col-md-4 " id="text"><span class="debutPhrase">Indiquez</span> la date, la destination et l'horaire de votre voyage,
+                            puis la quantité et poids du colis que vous consentez à transporter.</div>
+
+                            <br/>
+                        <button class="btn btn-primary nextBtn pull-right" type="button">Suivant</button>
+                    </div>
+                </div>
+
+                <div class="panel panel-primary setup-content" id="step-2">
+                    <div class="panel-heading">
+                        <div class="col-md-6 " id="text">
+                            <span class="debutPhrase"> L’expéditeur</span>  réserve en ligne via la plateforme « JibColis » et vous êtes automatiquement prévenu(e)
+                            par e-mail ou par téléphone à chaque nouvelle réservation.
+                            Ensuite vous échangez avec votre expéditeur par téléphone pour régler les derniers détails relatifs à l’expédition de votre colis.
+                        </div>
+
+                        <br/>
+
+                        <button class="btn btn-primary nextBtn pull-right" type="button">Suivant</button>
+                    </div>
+                </div>
+
+                <div class="panel panel-primary setup-content" id="step-3">
+                    <div class="panel-heading">
+                        <div class="col-md-6 " id="text">
+                            <span class="debutPhrase">Consultez</span> le profil qui vous correspond le mieux et vérifiez les informations concernant l’expéditeur.
+                            Si vous voulez des précisions sur la nature de l’expédition,
+                            la plateforme «JibColis» vous offre l’opportunité de rentrer en contact avec lui par téléphone ou par e-mail.
+                        </div>
+                        <br/>
+                        <button class="btn btn-primary nextBtn pull-right" type="button">Suivant</button>
+                    </div>
+                </div>
+
+                <div class="panel panel-primary setup-content" id="step-4">
+                    <div class="panel-heading">
+                        <div class="col-md-8 " id="text">
+                            <span class="debutPhrase">Convenez</span> d'un lieu et d'une heure de rendez-vous avec l'expéditeur,
+                            puis demandez à voir sa pièce d'identité et assurez-vous que les informations qui y figurent concordent
+                            avec celles apposées sur le contrat. Vérifiez le contenu du colis et contrôlez, en compagnie de l’expéditeur,
+                            les coordonnées exactes du destinataire du colis. Signez la déclaration de confiance (imprimable)
+                            sur le site et faites-le signer par l’expéditeur.
+                            Vous pouvez enfin prendre en charge l’envoi du colis
+                        </div>
+                        <br/>
+
+                        <button class="btn btn-primary nextBtn pull-right" type="button">Suivant</button>
+                    </div>
+                </div>
+                <div class="panel panel-primary setup-content" id="step-5">
+                    <div class="panel-heading">
+                        <div class="col-md-10 " id="text">
+                            <span class="debutPhrase">Lorsque</span> vous arrivez au lieu de destination contractuellement convenu :
+                            vous remettez le colis de main à main – remise en propres et sans intermédiaire(s) -
+                            accompagné de la déclaration de confiance en mentionnant votre nom et prénom.
+                            Le destinataire doit également, à son tour, vérifier si le contenu du colis correspond à ce qui a
+                            effectivement et contractuellement été convenu entre l’expéditeur et le transporteur.
+                            Il peut ensuite signer la déclaration de confiance et indiquer qu’il a effectivement bien réceptionné le colis –
+                            et éventuellement y formuler des réserves. Vous recevrez votre indemnité de participation
+                            uniquement après remise en mains propres au destinataire du colis.
+
+                        </div>
+                        <br/>
+                        <button class="btn btn-primary nextBtn pull-right" type="button">Suivant</button>
+                    </div>
+                </div>
+                <div class="panel panel-primary setup-content" id="step-6">
+                    <div class="panel-heading">
+                        <div class="col-md-6 " id="text">
+                            <span class="debutPhrase">L’indemnité</span> de participation proposée par le transporteur-voyageur doit être moins chère que les tarifs
+                            d’usage en vigueur proposés par les services marchands proposant des expéditions par voie traditionnelle.
+                            Cette indemnité demeure cependant libre et doit être établie d’un commun accord entre les deux parties contractantes.
+                        </div>
+                        <br/>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,149 @@
+body{
+    background-image: url("../images/background (3) - Copie.jpg");
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment:fixed;
+    margin-right: 10px;
+}
+img{
+    height: 100%;
+    max-width: 100%;
+    margin-left: 20px;
+}
+#Jibcolis{
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 50px;
+
+
+}
+#header{
+    width: 100%;
+    font-size: 17px;
+    color:#222222;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid #fff;
+    border-radius: 4px;
+
+}
+
+
+/* juste pour le formulaire d'incription*/
+.divider-text {
+    position: relative;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.divider-text span {
+    padding: 7px;
+    font-size: 12px;
+    position: relative;
+    z-index: 2;
+}
+.divider-text:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    top: 55%;
+    left: 0;
+    z-index: 1;
+}
+
+.btn-facebook {
+    background-color: #405D9D;
+    color: #fff;
+}
+.btn-twitter {
+    background-color: #42AEEC;
+    color: #fff;
+}
+#googleicon {
+    background-color: red;
+    color: white;
+}
+#googleicon li {
+    color: white;
+}
+/* end formulaire*/
+
+#inscription_block {
+    max-width: 700px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+#connexion_block{
+    padding-top: 20px;
+}
+#ReseauSocial{
+    color: red;
+}
+#pageAccueil{
+    padding-top: 20px;
+    color: #0d0d0d;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+#btnAccueil{
+    width: auto;
+    width: 200px;
+    margin-left: 20px;
+    color: black;
+}
+#textAccuei{
+    margin-right: 70px;
+    margin-left: 70px;
+    text-align: left;
+    text-align: justify;
+    color: black;
+}
+#containerTextAccueil{
+    padding: 10px;
+    margin-top: 20px;
+    border: black;
+    border-width: 1px;
+    border: 1px green groove;
+    box-shadow: 4px 4px 4px green;
+
+}
+#imgLumiere{
+    width:150px;
+    height: 150px;
+    text-align: center;
+}
+
+
+#sizeIcon{
+    width: 100px;
+    height: 100px;
+}
+#Col_eco_Securite{
+    border-radius: 5%;
+    text-align: justify;
+    padding: 20px;
+    background-color: rgba(0,55,0,0.3);
+}
+#footer{
+    float: bottom;
+    margin-top: 30px;
+}
+
+/* reprensetation de colis*/
+#BlockRepresentationColis{
+    background-color: rgba(255, 255, 255, 0.6);
+    margin: 5px;
+}
+#imgColis{
+    padding-top: 10px;
+    width:290px;
+    height:170px;
+}
+
+
+

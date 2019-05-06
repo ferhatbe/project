@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body%}
+    <link rel="stylesheet" href="{{ asset('css/ajoutColis.css') }}">
+    <div id="colis_block" >
+            <h3>Les Colis</h3>
+
+        <i class="material-icons"></i>
+
+
+        {% if coliss is defined %}
+            {% for m in coliss %}
+                {% if m.type=='1' %}
+                <div class="container">
+                    <div class="row" id="annonces">
+                         <div class="col-md-4">
+                            <img src="images/coliss.png" width="200px" height="200px">
+                         </div>
+                         <div class="col-md-4" id="txt">
+                             <div class="form-group input-group">
+                                     <span class="input-group-text"> <i class="fas fa-user"></i> </span>
+                                 <div style="margin-left: 10px"> Nom : {{ m.user.username }}</div>
+                             </div>
+                             <div class="form-group input-group">
+                                 <span class="input-group-text"> <i class="fas fa-plane-departure"> </i> </span>
+                                 <div style="margin-left: 8px"> Ville de Départ : {{ m.villeDepart }}</div>
+                             </div>
+                             <div class="form-group input-group">
+                                 <span class="input-group-text"><i class="fas fa-plane-arrival"></i> </span>
+                                 <div style="margin-left: 8px"> Ville d'arrivée : {{ m.villeArrive }}</div>
+                             </div>
+                             <div class="form-group input-group">
+                                 <span class="input-group-text"> <i class="far fa-calendar-alt"></i> </span>
+                                 <div style="margin-left: 9px"> Date de Départ : {{ m.dateDep|date('Y-m-d') }}</div>
+                             </div>
+
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group" >
+
+                                <a href="{{ path('jibcolis_showColis',{'id':m.id}) }}">
+                                    <button type="button" class="btn btn-success" style="margin-top: 20px">Consulter l'annonce</button>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                {% endif %}
+
+
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

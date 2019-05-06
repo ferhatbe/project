@@ -1,0 +1,42 @@
+
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <div class="container" id="inscription_block" >
+        <article class="card-body mx-auto" style="max-width: 400px;">
+            <h4 class="card-title mt-3 text-center">Connecter à Votre Compte</h4>
+            <p>
+                <a href="" class="btn btn-block " id="googleicon"> <i class="fab fa-google" ></i >   Connexion avec Gmail</a>
+                <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>  Connexion avec facebook</a>
+            </p>
+            <p class="divider-text" >
+                <span class="bg-light">OU</span>
+            </p>
+            <form action="{{ path('security_connexion') }}" method="post">
+
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Adresse mail" required name="_username">
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Mot de Passe" required name="_password" type="password">
+                </div> <!-- form-group// -->
+                <!-- <p><input type="checkbox" >Se souvenir de moi.</p> -->
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success "> Connexion  </button>
+                </div> <!-- form-group// -->
+            </form>
+            <p class="text-center">Pas Encore inscrit ? <a href="{{ path('security_registration') }}">S'inscrire</a> </p>
+            <p class="text-center"><a href="">Mot de passe oublier ?</a> </p>
+        </article>
+    </div> <!-- card.// -->
+
+    </div>
+    <!--container end.//-->
+
+{% endblock %}

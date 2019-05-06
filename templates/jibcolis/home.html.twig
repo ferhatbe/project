@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container" id="pageAccueil">
+        <div>
+            <p><img src="{{ asset('images/accueil_logo.png') }}" width="300"></p>
+            <h4>Transport De Colis Entre Particuliers</br>
+                De Main à Main</h4>
+        </div>
+        </br>
+        {% if app.user %}
+            <a href="{{ path('jibcolis_createColis') }}">
+                <button type="button" class="btn btn-outline-success" id="btnAccueil">Déposer une annonce</button>
+            </a>
+        {% else %}
+        <a href="{{ path('security_connexion') }}">
+            <button type="button" class="btn btn-outline-success" id="btnAccueil">Déposer une annonce</button>
+        </a>
+        {% endif %}
+
+            <a href="">
+                <button type="button" class="btn btn-outline-success" id="btnAccueil">Voir les annonces</button>
+            </a>
+
+        <div class="container"   id="containerTextAccueil" >
+            <div class="row ">
+                <div class="col-md-9">
+                    <h4 style="text-align: left; padding-left: 70px">JibColis - AwidColis</h4>
+                    <p id="textAccuei">La 1ère plateforme GRATUITE destinée à la diaspora maghrébine, dans le but de mettre en relation des personnes souhaitant envoyer un colis et les voyageurs acceptant de les transporter.
+                        Le voyageur et l'expéditeur sont libres de négocier entre eux une contre partie en échange du service fourni.
+                    </p>
+                </div>
+                <div class="col-md-3" id="imgLumiere">
+                    <img src="{{ asset('images/plus.png') }}">
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row" >
+            <div class="col-md-4 border border-success" id="Col_eco_Securite">
+                <img src="{{ asset('images/secureimg2.png') }}" id="sizeIcon">
+                <h4>Sécurité~Confiance</h4>
+                <p>Après accord entre le voyageur et le transporteur une attestation
+                constituant une preuve de remise de votre colis est imprimable <a href="#">ICI</a></p></div>
+            <div class="col-md-4 border border-success" id="Col_eco_Securite">
+                <img src="{{ asset('images/economic.png') }}" id="sizeIcon">
+                <h4>Economique~Solidaire</h4>
+                Un système Voyageur-Expéditeur gagnant- gagnant. Le voyageur peut amortir son billet. De son côté, l’expéditeur évite de se
+                déplacer dans les aéroports ou dans les gares et peut envoyer son colis à moindre coût, voir gratuitement.</div>
+            <div class="col-md-4 border border-success" id="Col_eco_Securite">
+                <img src="{{ asset('images/ecologique.png') }}" id="sizeIcon">
+                <h4>~Ecologique~</h4>
+                Réduire l'émission en CO2 des transports, en optimisant les
+                trajets des voyageurs existants plutôt que d'en créer de nouveaux.</div>
+        </div>
+    </div>
+    <div class="container">
+
+    </div>
+
+
+{% endblock %}

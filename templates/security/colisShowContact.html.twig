@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
+    <br/>
+    <section class="contact py-5 bg-light" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Details de l'annonce : </h4>
+                    <hr>
+                </div>
+                <div class="col-md-6">
+                    <div class="address">
+
+                        {% if colis %}
+                        <h5>Addresse :</h5>
+                        <ul class="list-unstyled">
+                            <li>  :</li>
+                            <li> Arrivée :</li>
+                            <li> Date  :</li>
+                        </ul>
+
+                        {% endif %}
+                    </div>
+                    <div class="email">
+                        <h5>Email:</h5>
+                        <ul class="list-unstyled">
+                            <li> info@email.com</li>
+                        </ul>
+                    </div>
+                    <div class="phone">
+                        <h5>Télephone :</h5>
+                        <ul class="list-unstyled">
+                            <li> 0753054227 </li>
+
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="social">
+                        <h4>Discription...</h4>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+
+                    <h4>Contacte ...</h4>
+                    <div class="card">
+                        <div class="card-body">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <input id="Full Name" name="Full Name" placeholder="Nom Prenom" class="form-control" type="text">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <input id="Mobile No." name="Mobile No." placeholder="Numéro Tél : (facultatif)" class="form-control" required="required" type="text">
+                                    </div>
+                                    <div class="form-group col-md-6">
+
+
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <textarea id="comment" name="comment" cols="40" rows="5" placeholder="Votre Message..."class="form-control"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <button type="button" class="btn btn-danger">Envoyer</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+{% endblock %}
