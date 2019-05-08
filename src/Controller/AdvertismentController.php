@@ -3,9 +3,11 @@ namespace App\Controller;
 
 
 use App\Entity\Colis;
+use App\Entity\User;
 use App\Form\ColisType;
 use App\Repository\ColisRepository;
 use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,35 +16,56 @@ use Symfony\Component\Security\Core\Security;
 
 class AdvertismentController extends AbstractController
 {
+
     /**
-     * @Route("/mesColis",name="security_mesColis")
+     * @var Security
      */
-    public function showColis()
+    private $securityService;
+
+    public function __construct(Security $securityService)
     {
-        $repo = $this->getDoctrine()->getRepository(Colis::class);
-        $coliss = $repo->findAll();
+        $this->securityService = $securityService;
+    }
+
+    /**
+     * @Route("/mesColis/{id]",name="security_mesColis")
+     * @param Security $securityService
+     * @param ObjectManager $em
+     */
+    public function mesColis(Security $securityService, ObjectManager $em)
+    {
+
+        // get User connected
+        /**
+         * @var $loUser User
+         */
+        $loUser  = $securityService->getToken()->getUser();
+        $laListColis = $em->getRepository(Colis::class)->findMyListColis($loUser);
 
         return  $this->render('user/mesColis.html.twig', [
             'controller_name' => 'SecurityController',
-            'coliss'=>$coliss
+            'coliss'=>$laListColis
         ]);
 
     }
+
     /**
      * @Route("/mesVoyage",name="security_mesVoyage")
      */
-    public function showVoyageur()
+    public function mesVoyage(Security $securityService, ObjectManager $em)
     {
-        $repo = $this->getDoctrine()->getRepository(Colis::class);
-        $coliss = $repo->findAll();
+        // get User connected
+        /**
+         * @var $loUser User
+         */
+        $loUser  = $securityService->getToken()->getUser();
+        $laListColis = $em->getRepository(Colis::class)->findMyListColis($loUser);
 
         return  $this->render('user/mesVoyage.html.twig', [
             'controller_name' => 'SecurityController',
-            'coliss'=>$coliss
+            'coliss'=>$laListColis
         ]);
-
     }
-
 
 
     /**
@@ -85,12 +108,13 @@ class AdvertismentController extends AbstractController
      */
     public function showColisContact(Colis $colis)
     {
-
         return  $this->render('security/colisShowContact.html.twig', [
-            'colis'=>'$colis'
+            'colis'=>$colis
         ]);
 
     }
+
+
 
 
 }

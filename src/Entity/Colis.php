@@ -33,8 +33,8 @@ class Colis
     private $paysDepart;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
+ * @ORM\Column(type="string", length=255)
+ */
     private $paysArrive;
 
     /**
@@ -48,7 +48,7 @@ class Colis
     private $villeArrive;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
     private $dateDep;
 
