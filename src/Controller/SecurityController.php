@@ -1,26 +1,44 @@
 <?php
 namespace App\Controller;
 
-use App\Entity\Colis;
 use App\Entity\User;
-use App\Form\ColisType;
 use App\Form\UserType;
-use App\Repository\ColisRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Core\Security;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
 
+    // Constructeur de la classe
+    /**
+     * @var ObjectManager $em
+     */
+    private $manager;
+    /**
+     * @var Security
+     */
+    private $securityService;
+
+    public function __construct(Security $securityService,ObjectManager $manager)
+    {
+        $this->securityService = $securityService;
+        $this->manager  = $manager;
+    }
 
 
-    // fonction pour l'inscription
+    // fonction pour l'inscription d'un nouveau utilisateur
+
     /**
      * @Route("/inscription", name="security_registration")
+     * @param Request $request
+     * @param ObjectManager $manager
+     * @param UserPasswordEncoderInterface $encoder
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function registration(Request $request, ObjectManager $manager, UserPasswordEncoderInterface $encoder)
     {
@@ -50,12 +68,23 @@ class SecurityController extends AbstractController
     }
 
 
+    // Fonction qui assur le login "Connextion"
     /**
      * @Route("/connexion", name="security_connexion")
+     * @param AuthenticationUtils $authenticationUtils
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function login(){
-        return $this->render('security/seConnecter.html.twig');
+    public function login(AuthenticationUtils $authenticationUtils){
+
+        $error = $authenticationUtils->getLastAuthenticationError();
+
+
+        return $this->render('security/seConnecter.html.twig', [
+            'error' => $error
+        ]);
     }
+
+    // Déconnextion
     /**
      * @Route("/deconnexion",name="security_logout")
      */

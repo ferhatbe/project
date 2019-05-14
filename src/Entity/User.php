@@ -123,11 +123,11 @@ class User implements UserInterface
     }
 
 
+    // les fonction de UserInterface
     public function getRoles()
     {
         return ['ROLE_USER'];
     }
-
 
     public function getSalt()
     {

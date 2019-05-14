@@ -48,7 +48,7 @@ class Colis
     private $villeArrive;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="date")
      */
     private $dateDep;
 
@@ -62,6 +62,7 @@ class Colis
      */
     private $poids;
 
+    // les case a cocher avant d'ajouter une annonce
     public $medicament;
     public $objets;
     public $cgu;
@@ -78,7 +79,6 @@ class Colis
     {
         return $this->id;
     }
-
 
     /**
      * @return mixed

@@ -1,53 +1,55 @@
 {% extends 'base.html.twig' %}
-
 {% block body%}
     <link rel="stylesheet" href="{{ asset('css/ajoutColis.css') }}">
-    <div id="colis_block" >
-        <h3>Les Colis</h3>
-
+    <div id="pageAccueil" >
+    <!--<img src="images/prochainTrajets.png"></img> -->
         <i class="material-icons"></i>
+        <div class="container">
+            <div class="row" id="annonces_row">
+                {% if colis is defined %}
+                    {% for m in colis %}
+                        {% if m.type=='2' %}
+
+                            <div class="col-md-4" >
+                                <div id="annonce">
+
+                                    <div style="margin-bottom: 10px">
+                                        <img src="images/voyageur.png" height="200px" width="250px">
+                                    </div>
+
+                                    <div>
+                                        <i class="fas fa-user" style="color: #6e6e6e"></i>
+                                        <span style="margin-left: 11px"> {{ m.user.username|upper }}</span>
+                                    </div>
+
+                                    <div>
+                                        <i class="fas fa-plane-departure" style="color: #1c71ff"></i>
+                                        <span style="margin-left: 5px"> Départ : {{ m.villeDepart }}</span>
+                                    </div>
+
+                                    <div>
+                                        <i class="fas fa-plane-arrival" style="color: #007e33"></i>
+                                        <span style="margin-left: 5px"> Arrivée : {{ m.villeArrive }}</span>
+                                    </div>
+
+                                    <div>
+                                        <i class="fas fa-calendar-alt " style="color: #9f105c"></i>
+                                        <span style="margin-left: 11px"> Date : {{ m.dateDep|date('Y-m-d') }}</span>
+                                    </div>
 
 
-        {% if coliss is defined %}
-            {% for m in coliss %}
-                {% if m.type=='2' %}
-                    <div class="container">
-                        <div class="row" id="annonces">
-                            <div class="col-md-4">
-                                <img src="images/coliss.png" width="200px" height="200px">
+                                    <div class="form-group" >
+                                        <a href="{{ path('jibcolis_showTrajet',{'id':m.id}) }}">
+                                            <button type="button" class="btn btn-success" style="margin-top: 20px">voir cette annonce</button>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-4" id="txt">
-                                <div class="form-group input-group">
-                                    <span class="input-group-text"> <i class="fas fa-user"></i> </span>
-                                    <div style="margin-left: 10px"> Nom : {{ m.user.username }}</div>
-                                </div>
-                                <div class="form-group input-group">
-                                    <span class="input-group-text"> <i class="fas fa-plane-departure"> </i> </span>
-                                    <div style="margin-left: 8px"> Ville de Départ : {{ m.villeDepart }}</div>
-                                </div>
-                                <div class="form-group input-group">
-                                    <span class="input-group-text"><i class="fas fa-plane-arrival"></i> </span>
-                                    <div style="margin-left: 8px"> Ville d'arrivée : {{ m.villeArrive }}</div>
-                                </div>
-                                <div class="form-group input-group">
-                                    <span class="input-group-text"> <i class="far fa-calendar-alt"></i> </span>
-                                    <div style="margin-left: 9px"> Date de Départ : {{ m.dateDep|date('Y-m-d') }}</div>
-                                </div>
 
-                            </div>
-                            <div class="col-md-4">
-                                <a href="{{ path('jibcolis_showColis') }}">
-                                    <button type="button" class="btn btn-success" style="margin-top: 20px">Consulter l'annonce</button>
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
+                        {% endif %}
+                    {% endfor %}
                 {% endif %}
-
-
-            {% endfor %}
-        {% endif %}
+            </div>
+        </div>
     </div>
-
 {% endblock %}

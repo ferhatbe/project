@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
-
 {% block body %}
+
     <div class="container" id="pageAccueil">
         <div>
             <p><img src="{{ asset('images/accueil_logo.png') }}" width="300"></p>
@@ -8,6 +8,7 @@
                 De Main à Main</h4>
         </div>
         </br>
+
         {% if app.user %}
             <a href="{{ path('jibcolis_createColis') }}">
                 <button type="button" class="btn btn-outline-success" id="btnAccueil">Déposer une annonce</button>
@@ -18,7 +19,7 @@
         </a>
         {% endif %}
 
-            <a href="">
+            <a href="{{ path('jibcolis_advertissements') }}">
                 <button type="button" class="btn btn-outline-success" id="btnAccueil">Voir les annonces</button>
             </a>
 
@@ -54,9 +55,5 @@
                 trajets des voyageurs existants plutôt que d'en créer de nouveaux.</div>
         </div>
     </div>
-    <div class="container">
-
-    </div>
-
 
 {% endblock %}

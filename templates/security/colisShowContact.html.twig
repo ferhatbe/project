@@ -2,10 +2,6 @@
 
 {% block body %}
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
     <link rel="stylesheet" href="{{ asset('css/colisContact.css') }}">
 
     <div class="container">
@@ -15,11 +11,26 @@
             <div class="col-md-6 info">
                 <div class="contact-info">
                     <img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image"/>
-                    <h3>Annonceur :{{ colis.user.username }}</h3>
-                    <h5>Départ : {{ colis.villeDepart }}</h5>
-                    <h5>Arrivée : {{ colis.villeArrive }}</h5>
-                    <h5>Date souhaité avant : <br/> {{ colis.dateDep|date('Y-m-d') }}</h5>
-                    <p id="discription"> Discription : {{ colis.description }}</p>
+                    <h3>Colis de : {{ colis.user.username|capitalize }}</h3>
+                    <h5>Départ : {{ colis.paysDepart |capitalize}}, {{ colis.villeDepart |capitalize}}</h5>
+                    <h5>Arrivée : {{ colis.paysArrive|capitalize }}, {{ colis.villeArrive|capitalize }}</h5>
+                    <h5>Date souhaité avant : </h5> {{ colis.dateDep|date('Y-m-d') }}
+                    <h5>Poids :</h5>
+                            {% if colis.poids == 1 %}
+                                <span>Moins de 1kg </span>
+                            {% endif %}
+                            {% if colis.poids == 3 %}
+                                <span>Entre 1kg et 3kg</span>
+                            {% endif %}
+                            {% if colis.poids == 5 %}
+                                <span>Entre 3kg et 5kg</span>
+                            {% endif %}
+                            {% if colis.poids == 6 %}
+                                <span>Plus de 5kg</span>
+                            {% endif %}
+                    <div>
+                        <h5 id="discription"> Discription :</h5> {{ colis.description }}
+                    </div>
                 </div>
             </div>
             <div class="col-md-6 form">

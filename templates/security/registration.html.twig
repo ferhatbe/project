@@ -1,9 +1,5 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 
@@ -11,25 +7,30 @@
     <div class="container-fluid" id="inscription_block">
         <article class="card-body mx-auto" style="max-width: 400px;">
 
-                <h4 class="card-title mt-3 text-center">Créer Votre Compte </h4>
-
+            <h4 class="card-title mt-3 text-center">Créer Votre Compte </h4>
+            <div>
+                <a href="" class="btn btn-block " id="googleicon"> <i class="fab fa-google" ></i >   Inscription avec Gmail</a>
+                <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>  Inscription avec facebook</a>
+            </div>
+            <div class="divider-text" >
+                <span class="bg-light">OU</span>
+            </div>
 
             {{ form_start(form) }}
-                    {{ form_row(form.username, {'label' : 'Nom et Prénom','attr':{'placeholder':'votre nom et prénom'}}) }}
+                    {{ form_row(form.username, {'label' : 'Prénom','attr':{'placeholder':'votre prénom'}}) }}
                     {{ form_row(form.email, {'label' : 'Adresse Mail ','attr':{'placeholder':'mail'}}) }}
                     {{ form_row(form.numero, {'label' : 'Numero ','attr':{'placeholder':'numéro de téléphone'}}) }}
                     {{ form_row(form.password, {'label' : 'Mot de passe ','attr':{'placeholder':'mot de passe'}}) }}
                     {{ form_row(form.confirm_password, {'label' : 'Confrim mot de passe','attr':{'placeholder':'confirmater votre mot de passe'}}) }}
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+                        <button type="submit" class="btn btn-primary btn-block"> Inscription  </button>
                         <p class="text-center">Deja un Compte ? <a href="{{ path('security_connexion') }}">Se Connecter</a> </p>
                     </div>
 
             {{ form_end(form) }}
 
-
-</article>
+        </article>
     </div>
 
 {% endblock %}

@@ -13,28 +13,30 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ColisType extends AbstractType
 {
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('paysDepart',null, array('label' => false), ChoiceType::class, [
+            ->add('paysDepart', ChoiceType::class, [
                 'choices' => array_combine(array_values(Intl::getRegionBundle()->getCountryNames()),
-                    array_keys(Intl::getRegionBundle()->getCountryNames()))
+                    array_values(Intl::getRegionBundle()->getCountryNames()))
 
             ])
-            ->add('paysArrive',null, array('label' => false),ChoiceType::class, [
+            ->add('paysArrive',ChoiceType::class, [
                 'choices' => array_combine(array_values(Intl::getRegionBundle()->getCountryNames()),
-                    array_keys(Intl::getRegionBundle()->getCountryNames())),
+                    array_values(Intl::getRegionBundle()->getCountryNames())),
 
             ])
             ->add('villeDepart',null, array('label' => false))
             ->add('villeArrive',null, array('label' => false))
             ->add('dateDep')
+
             ->add('poids', ChoiceType::class, [
                 'choices'  => [
                     ' Moins de 1kg' => 1,
-                    ' Entre 1kg et 3kg' => 2,
-                    ' Entre 3kg et 5kg' => 3,
-                    ' Plus de 5kg' => 4,
+                    ' Entre 1kg et 3kg' => 3,
+                    ' Entre 3kg et 5kg' => 5,
+                    ' Plus de 5kg' => 6,
 
                 ]])
             ->add('description',TextareaType::class)
