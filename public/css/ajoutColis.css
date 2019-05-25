@@ -1,6 +1,7 @@
 #inscription_block{
 
-    background-color: rgba(239, 155, 15, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
+
 
 }
 #btnColis{
@@ -27,5 +28,26 @@
 #annonces_row{
     margin: 2%;
     margin-bottom: 10px;
+}
+
+
+h1  {
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 72px;
+    color: brown;
+    padding: 20px 30px;
+    text-align: center;
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
+}
+h2{
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 52px;
+    color: brown;
+    padding: 20px 30px;
+    text-align: center;
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
+
 }
 

@@ -3,29 +3,33 @@
     <link rel="stylesheet" href="css/ajoutColis.css">
     <div class="container" id="inscription_block" >
         <article class="card-body mx-auto" style="max-width: 700px;">
-            <h3>Creation de colis</h3>
+            <h2 style="color: #9f5811">Creation de colis</h2>
 
             <div class="row">
-
                     <div class="col-md-6">
-                        {{ form_start(form) }}
-                        {{ form_row(form.type) }}
-                        {{ form_row(form.paysDepart,{'attr':{'placeholder':'Pays Départ'}}) }}
-                        {{ form_row(form.villeDepart,{'attr':{'placeholder':'Ville Départ'}}) }}
-
-                        {{ form_row(form.dateDep) }}
+                        <b>
+                            {{ form_start(form) }}
+                            {{ form_row(form.type) }}
+                            {{ form_row(form.paysDepart,{'attr':{'placeholder':'Pays Départ'}}) }}
+                            {{ form_row(form.villeDepart,{'attr':{'placeholder':'Ville Départ'}}) }}
+                            {{ form_row(form.dateDep) }}
+                        </b>
                     </div>
 
+
                     <div class="col-md-6">
-                        {{ form_row(form.poids) }}
-                        {{ form_row(form.paysArrive,{'attr':{'placeholder':'Pays d\'Arrivé'}}) }}
-                        {{ form_row(form.villeArrive,{'attr':{'placeholder':'Ville d\'Arrivée'}}) }}
-                        {{ form_row(form.description,{'attr':{'placeholder':'Votre discription'}}) }}
+                        <b>
+                            {{ form_row(form.poids) }}
+                            {{ form_row(form.paysArrive,{'attr':{'placeholder':'Pays d\'Arrivé'}}) }}
+                            {{ form_row(form.villeArrive,{'attr':{'placeholder':'Ville d\'Arrivée'}}) }}
+                            {{ form_row(form.description,{'attr':{'placeholder':'Votre discription'}}) }}
+                        </b>
                     </div>
+
 
                         {{ form_row(form.medicament) }}
                         {{ form_row(form.objets) }}
-                        {{ form_row(form.cgu) }} <a href="#"> CGU </a>
+                        {{ form_row(form.cgu) }} <a href="{{ path('cgu_jibcolis') }}"> CGU </a>
 
                     <div class="form-group" style="margin-left: 90px">
                         <button type="submit" class="btn btn-success "> Enregistrer  </button>

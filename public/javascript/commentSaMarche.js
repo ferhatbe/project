@@ -41,3 +41,5 @@ $(document).ready(function () {
 
     $('div.setup-panel div a.btn-success').trigger('click');
 });
+
+

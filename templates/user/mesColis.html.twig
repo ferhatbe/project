@@ -3,6 +3,7 @@
 {% block body%}
     <link rel="stylesheet" href="{{ asset('css/ajoutColis.css') }}">
     <div id="pageAccueil" >
+        <h2 style="text-align: left"> Liste de Mes Colis</h2>
         <div class="container">
             <div class="row" id="annonces_row">
                 {% if colis is defined %}
@@ -42,7 +43,7 @@
                                         <form action="{{ path('supprimer_annonce', {id: m.id }) }}" method="post" style="display: inline-block">
                                             <input type="hidden" name="_method" value="DELETE">
                                             <input type="hidden" name="token" value="{{ csrf_token('delete') }}"/>
-                                            <button type="submit" class="btn btn-danger" id="btnColis">Supprimer</button>
+                                            <button type="submit" class="btn btn-danger" id="btnColis" onclick="return confirm('Dis wellah que tu veux le supprimer ?')">Supprimer</button>
                                         </form>
 
                                     </div>

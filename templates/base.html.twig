@@ -27,18 +27,22 @@
 <body>
 <header  id="header">
     <!-- Image and text -->
-    <div class="navbar navbar-expand-sm navbar-light bg-light" id="Jibcolis">
+
+
+    <div class="navbar navbar-expand-lg navbar-light bg-light" id="Jibcolis">
         <a class="navbar-brand" href="{{ asset('/') }}" id="Jibcolis">
             <img src="{{ asset('images/Logo4.png') }}" width="140" height="125" class="img-responsive center-block" alt="">
         </a>
-        <div class="collapse navbar-collapse navbar-fixed-top " >
-            <ul class="navbar-nav ml-auto" >
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ asset('/') }}">Accueil <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('jibcolis_commentCaMarche') }}"> orientation</a>
-                </li>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <div class="nav navbar-nav ml-auto" >
+
+                    <a class="nav-item nav-link active" href="{{ asset('/') }}">Accueil <span class="sr-only">(current)</span></a>
+
+                    <a class="nav-item nav-link active" href="{{ path('jibcolis_commentCaMarche') }}"> orientation</a>
+
                 <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Annonces
@@ -48,7 +52,7 @@
                         <a class="dropdown-item" href="{{ path('jibcolis_colis') }}">Colis</a>
                     </div>
                 </li>
-            </ul>
+            </div>
                 <ul class="navbar-nav " >
                 <!-- test de connection -->
                 {% if not app.user %}
@@ -71,7 +75,7 @@
                             <a class="dropdown-item" href="{{ path('security_mesVoyage') }}">Mes Trajets</a>
                             <a class="dropdown-item" href="{{ path('security_mesColis') }}">Mes Colis</a>
                             <a class="dropdown-item" href="{{ path('jibcolis_createColis') }}">Déposer +</a>
-                            <a class="dropdown-item" href="{{ path('jibcolis_createColis') }}">messages</a>
+                            <a class="dropdown-item" href="{{ path('message_mesMessages') }}">messages</a>
                             <a class="dropdown-item " href="{{ path('security_logout') }}">Déconnecter</a>
                         </div>
                     </li>
@@ -88,38 +92,34 @@
     {% endblock %}
 </div>
 <!-- Footer -->
-<footer class="page-footer font-small cyan darken-3 " id="footer">
+<footer class="page-footer font-small cyan darken-3 ">
 
     <!-- Footer Elements -->
     <div class="footer-copyright text-center py-3" style="background-color:#00695c; color: #F5F5F5;">
         <span style="color: white">SUIVEZ-NOUS SUR : </span>
-        <!--Instagram-->
-        <a class="ins-ic">
-            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-1.5x"> Instagram</i>
-        </a>
-        <!--Linkedin -->
-        <a class="li-ic">
-            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-1.5x">Linkedin</i>
-        </a>
         <!-- Facebook -->
-        <a class="fb-ic">
-            <i class="fab fa-facebook-f fa-lg mr-md-5 mr-3 fa-1.5x">Facebook</i>
+        <a class="col-md-2" href="https://www.facebook.com/152541321265" target="_blank" style="color: white">
+          |  Facebook |
         </a>
-        <!--
-        <div class="d-flex justify-content-center h-100">
-            <div class="searchbar">
-                <input class="search_input" type="text" name="" placeholder="Search...">
-                <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
-            </div>
-        </div>
-        -->
+        <a class="col-md-2" href="{{ path('quiSommesNous') }}" style="color: white">
+            | Qui Sommes Nous |
+        </a>
 
+        <a class="col-md-2" href="{{ path('quiSommesNous') }}" style="color: white">
+            | Nos Objectifs |
+        </a>
+        <a class="col-md-2" href="{{ path('cgu_jibcolis') }}" style="color: white">
+            | CGU |
+        </a>
+        <a class="col-md-2" href="https://association-addra.com/" target="_blank" style="color: white">
+            | Association Addra |
+        </a>
+        <a class="col-md-2" href="https://association-addra.com/" target="_blank" style="color: white">
+            | Contactez-Nous |
+        </a>
 
-        <!-- Copyright -->
-
-        © Copyright JIBCOLIS 2019, All rights reserved
+        <p>© Copyright JIBCOLIS 2019, All rights reserved</p>
     </div>
-    <!-- Copyright -->
 
 </footer>
 <!-- Footer -->
@@ -130,6 +130,7 @@
             integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 {% endblock %}
 </body>
 </html>

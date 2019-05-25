@@ -30,15 +30,15 @@ class ColisRepository extends ServiceEntityRepository
     }
 
 
-    /*
-    public function findOneBySomeField($value): ?Colis
+
+    public function findAllAdvertisement($allAdvertisement)
     {
         return $this->createQueryBuilder('c')
-              ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('c.user != :advert')
+            ->setParameter('advert', $allAdvertisement)
             ->getQuery()
-            ->getOneOrNullResult()
+            ->getResult()
         ;
     }
-    */
+
 }

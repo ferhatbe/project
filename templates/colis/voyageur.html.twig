@@ -3,7 +3,8 @@
     <link rel="stylesheet" href="{{ asset('css/ajoutColis.css') }}">
     <div id="pageAccueil" >
     <!--<img src="images/prochainTrajets.png"></img> -->
-        <i class="material-icons"></i>
+        <h1> Liste des Voyageur</h1>
+
         <div class="container">
             <div class="row" id="annonces_row">
                 {% if colis is defined %}
@@ -40,7 +41,7 @@
 
                                     <div class="form-group" >
                                         <a href="{{ path('jibcolis_showTrajet',{'id':m.id}) }}">
-                                            <button type="button" class="btn btn-success" style="margin-top: 20px">voir cette annonce</button>
+                                            <button type="button" class="btn btn-success" style="margin-top: 20px">Consulter l'annonce</button>
                                         </a>
                                     </div>
                                 </div>

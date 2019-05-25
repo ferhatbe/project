@@ -3,9 +3,10 @@
 {% block body%}
     <link rel="stylesheet" href="{{ asset('css/ajoutColis.css') }}">
     <div id="pageAccueil" >
-        <!-- <img src="images/colisT.png"></img> -->
-        <i class="material-icons"></i>
+
+
         <div class="container">
+            <h1 style="text-align: left"> Liste des Colis</h1>
             <div class="row" id="annonces_row">
                 {% if colis is defined %}
                     {% for m in colis %}
@@ -34,7 +35,7 @@
                                     </div>
                                     <div class="form-group" >
                                         <a href="{{ path('jibcolis_showColis',{'id':m.id}) }}">
-                                            <button type="button" class="btn btn-success" style="margin-top: 20px">voir cette annonce</button>
+                                            <button type="button" class="btn btn-success" style="margin-top: 20px">Consulter l'annonce</button>
                                         </a>
                                     </div>
                                 </div>

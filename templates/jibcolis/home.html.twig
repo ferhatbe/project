@@ -2,6 +2,7 @@
 {% block body %}
 
     <div class="container" id="pageAccueil">
+        <br/>
         <div>
             <p><img src="{{ asset('images/accueil_logo.png') }}" width="300"></p>
             <h4>Transport De Colis Entre Particuliers</br>
@@ -42,7 +43,7 @@
                 <img src="{{ asset('images/secureimg2.png') }}" id="sizeIcon">
                 <h4>Sécurité~Confiance</h4>
                 <p>Après accord entre le voyageur et le transporteur une attestation
-                constituant une preuve de remise de votre colis est imprimable <a href="#">ICI</a></p></div>
+                constituant une preuve de remise de votre colis est imprimable <a href="{{ path('telecharger') }}">ICI</a></p></div>
             <div class="col-md-4 border border-success" id="Col_eco_Securite">
                 <img src="{{ asset('images/economic.png') }}" id="sizeIcon">
                 <h4>Economique~Solidaire</h4>
@@ -54,6 +55,65 @@
                 Réduire l'émission en CO2 des transports, en optimisant les
                 trajets des voyageurs existants plutôt que d'en créer de nouveaux.</div>
         </div>
+        <br/><br/>
+        <div class="container">
+            <h2 style="color: #007e33; text-align: left">Présentation</h2>
+            <br />
+            <hr style="border-width: 2px; border-color: red">
+            <p class="quia">
+                <strong>«JibColis»</strong> est une plateforme numérique de
+                co-valisage qui met en relation des particuliers entre eux et leur
+                permet d’envoyer des colis à destination des 5 Continents et plus
+                particulièrement vers l’Europe et l’Afrique du nord.
+            </p>
+            <p class="quia">Ce site vous offre la possibilité d’envoyer vos courriers,
+                documents, livres, appareils et matériels, habillement et accessoires, médicaments,
+                mobilier divers…
+            </p>
+            <p class="quia">Ce site fonctionne 24h/24 et 7j/7 et est sécurisé.</p>
+            <p class="quia">L’expéditeur (l’envoyeur) est la personne physique ayant choisi de faire envoyer son
+                COLIS  par un tiers sélectionné via notre plateforme :
+            </p>
+            <p class="quia">Le transporteur voyageur s’inscrit sur le site JibColis et
+                propose son trajet de voyage.</p>
+            <p class="quia">L’utilisateur souhaitant envoyer son colis choisit librement
+                la personne physique qui lui remettra son besoin à transporter.</p>
+            <hr style="border-width: 2px; border-color: red">
+            <br><br>
+                <h4 style="text-align: left; color: #007e33;">Le site JibColis permet ainsi de :</h4>
+            <br>
+            <div class="row">
+                <div class="col-md-3" id="leSitePermet" >
+                        <h4>-1-</h4>
+                    <P>Rendre service en transportant un ou plusieurs colis</P>
+                </div>
+                <div class="element col-md-3" id="leSitePermet">
+                    <h4>-2-</h4>
+                    <P>Amortir ses frais de voyage et de déplacement</P>
+                </div>
+                <div class="element col-md-3" id="leSitePermet">
+                    <h4>-3-</h4>
+                    <P>A moindre coût ou gratuitement (Au libre choix du transporteur-voyageur)</P>
+                </div>
+                <div class="element col-md-3"id="leSitePermet">
+                    <h4>-4-</h4>
+                    <P>A des dates, horaires et trajets librement définis entre les parties</P>
+                </div>
+            </div>
+            <br>
+            <div id="containerTextAccueil">
+                <p id="textAccuei" style=" padding-top: 20px">
+
+                    <strong style="color: black">«JibColis »</strong> permet donc de mettre en contact des personnes
+                    désirants expédier un colis en urgence avec des personnes prêtes à le transporter.
+                    Ce service vous offre une expédition en toute confiance de votre colis tout en vous
+                    permettant de réduire vos frais d’envoi. Il donne aussi l’opportunité au
+                    transporteur-voyageur de rentabiliser son voyage et par la même occasion,
+                    de dépanner une personne se trouvant dans l’urgence.
+                </p>
+
+            </div>
+          </div>
     </div>
 
 {% endblock %}

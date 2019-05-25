@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -45,28 +46,13 @@ class User implements UserInterface
      *      max = 50,
      *      minMessage = "Trop court votre mot de passe",
      *      maxMessage = "Trop grand votre mot de passe"
-     * )*/
+     * )
+     */
     private $password;
     /**
      * @Assert\EqualTo(propertyPath="password", message="vos deux mots de passe sont différent")
      */
     private $confirm_password;
-
-    /**
-     * @return mixed
-     */
-    public function getConfirmPassword()
-    {
-        return $this->confirm_password;
-    }
-
-    /**
-     * @param mixed $confirm_password
-     */
-    public function setConfirmPassword($confirm_password): void
-    {
-        $this->confirm_password = $confirm_password;
-    }
 
 
     public function getId(): ?int
@@ -123,6 +109,17 @@ class User implements UserInterface
     }
 
 
+    public function getConfirmPassword()
+    {
+        return $this->confirm_password;
+    }
+
+    public function setConfirmPassword($confirm_password): void
+    {
+        $this->confirm_password = $confirm_password;
+    }
+
+
     // les fonction de UserInterface
     public function getRoles()
     {
@@ -136,4 +133,11 @@ class User implements UserInterface
     public function eraseCredentials()
     {
     }
+    public function __toString()
+    {
+        return (string) $this->get();
+    }
+
+
+
 }

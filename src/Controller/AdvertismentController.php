@@ -3,11 +3,14 @@ namespace App\Controller;
 
 
 use App\Entity\Colis;
+use App\Entity\Message;
 use App\Entity\User;
 use App\Form\ColisType;
+use App\Form\MessageType;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
 
@@ -109,34 +112,6 @@ class AdvertismentController extends AbstractController
 
     }
 
-    // Consulter un Colis et contacter l'annonceur
-    /**
-     * @Route("/Consulter_annonce/{id}",name="jibcolis_showColis")
-     * @param Colis $colis
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function showColisContact(Colis $colis)
-    {
-        return  $this->render('security/colisShowContact.html.twig', [
-            'colis'=>$colis
-        ]);
-
-    }
-
-    // Consulter un trajet puis contacter l'annonceur
-    /**
-     * @Route("/Consulter_trajet/{id}",name="jibcolis_showTrajet")
-     * @param Colis $colis
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function showTrajetContact(Colis $colis)
-    {
-        return  $this->render('security/trajetShowContact.html.twig', [
-            'colis'=>$colis
-        ]);
-
-    }
-
     //Consulter mon annonce puis la modifier ou la supprimer
     /**
      * @Route("/Mon_Colis/{id}",name="user_showColis")
@@ -196,7 +171,7 @@ class AdvertismentController extends AbstractController
             $this->em->flush();
         }
 
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute('security_mesColis');
 
     }
 
