@@ -47,24 +47,13 @@ img{
     position: relative;
     z-index: 2;
 }
-.divider-text:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    border-bottom: 1px solid #ddd;
-    top: 55%;
-    left: 0;
-    z-index: 1;
-}
+
 
 .btn-facebook {
     background-color: #405D9D;
     color: #fff;
 }
-.btn-twitter {
-    background-color: #42AEEC;
-    color: #fff;
-}
+
 #googleicon {
     background-color: red;
     color: white;
@@ -135,7 +124,7 @@ img{
 }
 footer{
 
-    margin-top:25%;
+    margin-top:15%;
 
 }
 
@@ -158,14 +147,45 @@ footer{
     margin-bottom:5px ;
 }
 
+/* Qui sommes nous */
 #personnageJibcolis{
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(91, 60, 17,0.4);
     padding-top: 20px;
     border-radius: 10px;
     text-align: justify;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 .nom{
-    color: brown;
+    color: #082a1d;
     margin-left: 20px;
 }
+.biblio{
+    color: white;
+}
+
+/* page comment sa marche*/
+.how-section1{
+    margin-top:-10%;
+    padding: 10%;
+}
+.how-section1 h4{
+    color: #9f5811;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.how-section1 .row
+{
+    margin-top: 2%;
+}
+.how-img
+{
+    text-align: center;
+}
+.how-img img{
+    width: 40%;
+}
+
+
+/* Nos objectifs */
+#row

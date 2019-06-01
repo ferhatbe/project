@@ -3,14 +3,11 @@ namespace App\Controller;
 
 
 use App\Entity\Colis;
-use App\Entity\Message;
 use App\Entity\User;
 use App\Form\ColisType;
-use App\Form\MessageType;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
 
@@ -44,11 +41,10 @@ class AdvertismentController extends AbstractController
      */
     public function mesColis()
     {
-        // get User connected
         /**
          * @var $loUser User
          */
-        $loUser  = $this->securityService->getToken()->getUser();
+        $loUser  = $this->securityService->getToken()->getUser();// get User connected
         $laListColis = $this->em->getRepository(Colis::class)->findMyListColis($loUser);
 
         return  $this->render('user/mesColis.html.twig', [

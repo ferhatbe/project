@@ -43,6 +43,13 @@ class JibcolisController extends AbstractController
     }
 
     /**
+     * @Route("/Objectifs", name="objectifs")
+     */
+    public function objectifs()
+    {
+        return $this->render('jibcolis/NosObjectifs.html.twig');
+    }
+    /**
      * @Route("CGU", name="cgu_jibcolis")
      */
     public function cguJibcolis()
